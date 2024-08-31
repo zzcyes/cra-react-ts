@@ -163,6 +163,11 @@
       "prettier --write"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pnpm run checkTs && pnpm run lint-staged"
+    }
+  },
   "babel": {
     "presets": [
       "react-app"
