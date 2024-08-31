@@ -1,12 +1,10 @@
-import { useEffect, useState } from "react";
-import dayjs from "dayjs";
+import { useEffect, useState } from 'react';
+import dayjs from 'dayjs';
 
-const DefaultFormat = "YYYY-MM-DD HH:mm:ss";
+const DefaultFormat = 'YYYY-MM-DD HH:mm:ss';
 
 const useCurrentTime = (format: string = DefaultFormat) => {
-  const [currentTime, setCurrentTime] = useState<string>(
-    dayjs().format(format)
-  );
+  const [currentTime, setCurrentTime] = useState<string>(dayjs().format(format));
 
   useEffect(() => {
     let animationFrameId: number;

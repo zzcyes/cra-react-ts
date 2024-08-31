@@ -1,8 +1,8 @@
-import { Layout, theme } from "antd";
-import { Breadcrumb } from "components/Breadcrumb";
-import { SiderMenu } from "components/SiderMenu";
-import { Navigation } from "components/Navigation";
-import { Outlet } from "react-router-dom";
+import { Layout, theme } from 'antd';
+import { Breadcrumb } from 'components/Breadcrumb';
+import { SiderMenu } from 'components/SiderMenu';
+import { Navigation } from 'components/Navigation';
+import { Outlet } from 'react-router-dom';
 
 const { Content, Footer } = Layout;
 
@@ -14,13 +14,13 @@ const BasicLayout = () => {
   return (
     <Layout
       style={{
-        minHeight: "100vh",
+        minHeight: '100vh',
       }}
     >
       <Navigation />
       <Layout>
         <SiderMenu />
-        <Layout style={{ padding: "0 24px 24px" }}>
+        <Layout style={{ padding: '0 24px 24px' }}>
           <Breadcrumb />
           <Content
             style={{

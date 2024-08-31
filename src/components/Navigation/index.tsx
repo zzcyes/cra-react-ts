@@ -1,17 +1,17 @@
-import { Layout, Row, Menu } from "antd";
-import styled from "styled-components";
-import ReactLogo from "assets/react.svg";
-import type { MenuProps } from "antd";
-import useCurrentTime from "hooks/useCurrentTime";
+import { Layout, Row, Menu } from 'antd';
+import styled from 'styled-components';
+import ReactLogo from 'assets/react.svg';
+import type { MenuProps } from 'antd';
+import useCurrentTime from 'hooks/useCurrentTime';
 
 const { Header } = Layout;
 
-const items1: MenuProps["items"] = ["1", "2", "3"].map((key) => ({
+const items1: MenuProps['items'] = ['1', '2', '3'].map(key => ({
   key,
   label: `nav ${key}`,
 }));
 
-const navigationBgColor = "#5352ed";
+const navigationBgColor = '#5352ed';
 
 export const Navigation = () => {
   const currentTime = useCurrentTime();
@@ -19,7 +19,7 @@ export const Navigation = () => {
   return (
     <Header
       style={{
-        padding: "0",
+        padding: '0',
         backgroundColor: navigationBgColor,
       }}
     >
@@ -31,7 +31,7 @@ export const Navigation = () => {
         <Menu
           theme="dark"
           mode="horizontal"
-          defaultSelectedKeys={["2"]}
+          defaultSelectedKeys={['2']}
           items={items1}
           style={{ flex: 1, minWidth: 0, backgroundColor: navigationBgColor }}
         />

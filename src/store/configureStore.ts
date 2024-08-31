@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import globalReducer from "store/common/globalSlice";
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import globalReducer from 'store/common/globalSlice';
 
 export const store = configureStore({
   reducer: {

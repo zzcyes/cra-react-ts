@@ -1,17 +1,17 @@
-import { IRoutes } from "types";
-import Hello from "pages/Hello";
-import { DesktopOutlined } from "@ant-design/icons";
+import { IRoutes } from 'types';
+import Hello from 'pages/Hello';
+import { DesktopOutlined } from '@ant-design/icons';
 
 export const routes: IRoutes[] = [
   {
-    path: "hello",
-    name: "欢迎界面",
+    path: 'hello',
+    name: '欢迎界面',
     element: <Hello />,
     icon: <DesktopOutlined />,
   },
   {
-    path: "hello2",
-    name: "欢迎界面2",
+    path: 'hello2',
+    name: '欢迎界面2',
     element: <Hello />,
     icon: <DesktopOutlined />,
   },
@@ -61,7 +61,7 @@ export const getDefaultRouterPath = (path?: string) => {
   if (path) return path;
   const [defaultRoute] = routes;
   if (Array.isArray(defaultRoute?.children) && defaultRoute?.children.length) {
-    return defaultRoute.path! + "/" + defaultRoute.children[0].path!;
+    return defaultRoute.path! + '/' + defaultRoute.children[0].path!;
   }
   return defaultRoute.path!;
 };

@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "store/configureStore";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'store/configureStore';
 
 export interface GlobalState {
   isMenuCollapsed: boolean;
@@ -10,10 +10,10 @@ const initialState: GlobalState = {
 };
 
 export const counterSlice = createSlice({
-  name: "global",
+  name: 'global',
   initialState,
   reducers: {
-    toggleMenuCollapsed: (state) => {
+    toggleMenuCollapsed: state => {
       state.isMenuCollapsed = !state.isMenuCollapsed;
     },
   },
@@ -21,7 +21,6 @@ export const counterSlice = createSlice({
 
 export const { toggleMenuCollapsed } = counterSlice.actions;
 
-export const selectIsMenuCollapsed = (state: RootState) =>
-  state.global.isMenuCollapsed;
+export const selectIsMenuCollapsed = (state: RootState) => state.global.isMenuCollapsed;
 
 export default counterSlice.reducer;
