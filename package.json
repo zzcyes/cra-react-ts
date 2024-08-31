@@ -81,7 +81,8 @@
     "test": "node scripts/test.js",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "commit": "git-cz"
   },
   "eslintConfig": {
     "extends": [
@@ -163,9 +164,9 @@
       "prettier --write"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm run checkTs && pnpm run lint-staged"
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
     }
   },
   "babel": {
@@ -174,8 +175,9 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.4.1",
-    "@commitlint/config-conventional": "^19.4.1",
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.2.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^8.0.0",
