@@ -173,11 +173,18 @@
     ]
   },
   "devDependencies": {
+    "commitizen": "^4.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.2.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "git-cz": "^4.9.0",
     "husky": "^9.1.5",
     "lint-staged": "^15.2.9",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "stylelint": "^16.9.0",
+    "stylelint-config-recommended": "^14.0.1",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   }
 }
