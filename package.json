@@ -175,6 +175,7 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.4.1",
     "commitizen": "^4.3.0",
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.2.1",
