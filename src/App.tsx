@@ -1,12 +1,10 @@
-import React from "react";
-import "./App.css";
-import { Button } from "antd";
+import Router from "router/Router";
 
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
+    <>
+      <Router></Router>
+    </>
   );
 }
 
