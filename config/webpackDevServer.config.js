@@ -122,5 +122,12 @@ module.exports = function (proxy, allowedHost) {
       // https://github.com/facebook/create-react-app/issues/2272#issuecomment-302832432
       devServer.app.use(noopServiceWorkerMiddleware(paths.publicUrlOrPath));
     },
+    proxy:[
+      {
+        context: ['/v1'],
+        target: 'http://127.0.0.1:3010',
+        changeOrigin: true,
+      },
+    ]
   };
 };
