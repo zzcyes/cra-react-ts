@@ -154,11 +154,11 @@
     "resetMocks": true
   },
   "lint-staged": {
-    "*.{ts,tsx,js}": [
+    "*.{ts,tsx,js,jsx}": [
       "eslint --config .eslintrc.js"
     ],
     "*.{css,less,scss}": [
-      "stylelint --config .stylelintrc.js"
+      "stylelint --fix"
     ],
     "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
       "prettier --write"
@@ -185,7 +185,11 @@
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0",
+    "stylelint-config-recess-order": "^5.1.0",
     "stylelint-config-recommended": "^14.0.1",
+    "stylelint-config-recommended-less": "^3.0.1",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "webpack-bundle-analyzer": "^4.10.2",

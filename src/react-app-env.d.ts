@@ -69,3 +69,6 @@ declare module '*.module.sass' {
   const classes: { readonly [key: string]: string };
   export default classes;
 }
+
+// To solve the issue: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31245
+/// <reference types="styled-components/cssprop" />
