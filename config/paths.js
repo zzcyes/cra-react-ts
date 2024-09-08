@@ -66,6 +66,7 @@ module.exports = {
   pnpmLockFile: resolveApp('pnpm-lock.yaml'),
   testsSetup: resolveModule(resolveApp, 'src/setupTests'),
   proxySetup: resolveApp('src/setupProxy.js'),
+  proxyConfigSetup: resolveApp('config/proxy.config.js'),
   appNodeModules: resolveApp('node_modules'),
   appWebpackCache: resolveApp('node_modules/.cache'),
   appTsBuildInfoFile: resolveApp('node_modules/.cache/tsconfig.tsbuildinfo'),

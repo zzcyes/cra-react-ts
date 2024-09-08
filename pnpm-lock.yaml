@@ -240,6 +240,9 @@ importers:
       eslint-plugin-prettier:
         specifier: ^5.2.1
         version: 5.2.1(@types/eslint@8.56.12)(eslint-config-prettier@9.1.0(eslint@8.57.0))(eslint@8.57.0)(prettier@3.3.3)
+      http-proxy-middleware:
+        specifier: ^2.0.0
+        version: 2.0.6(@types/express@4.17.21)
       husky:
         specifier: ^8.0.0
         version: 8.0.3
@@ -249,6 +252,9 @@ importers:
       prettier:
         specifier: ^3.3.3
         version: 3.3.3
+      proxy-hot-reload-middleware:
+        specifier: 1.0.1
+        version: 1.0.1(@types/express@4.17.21)(express@4.19.2)
       stylelint:
         specifier: ^16.9.0
         version: 16.9.0(typescript@4.9.5)
@@ -5511,6 +5517,11 @@ packages:
 
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+
+  proxy-hot-reload-middleware@1.0.1:
+    resolution: {integrity: sha512-++yyjsD62JDpmVLu9M3/7OhCDgaThrboa/bagTlcf3qgSOuHbV1WJK4U7KCu/e0E8d/WfyzXxMawBuY24tRGCw==}
+    peerDependencies:
+      express: ^4.0.0
 
   psl@1.9.0:
     resolution: {integrity: sha512-E/ZsdU4HLs/68gYzgGTkMicWTLPdAftJLfJFlLUAAKZGkStNU72sZjT66SnMDVOfOWY/YAoiD7Jxa9iHvngcag==}
@@ -13358,6 +13369,14 @@ snapshots:
       ipaddr.js: 1.9.1
 
   proxy-from-env@1.1.0: {}
+
+  proxy-hot-reload-middleware@1.0.1(@types/express@4.17.21)(express@4.19.2):
+    dependencies:
+      express: 4.19.2
+      http-proxy-middleware: 2.0.6(@types/express@4.17.21)
+    transitivePeerDependencies:
+      - '@types/express'
+      - debug
 
   psl@1.9.0: {}
 
