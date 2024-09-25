@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit "$1"
+# npx --no-install commitlint --edit "$1"
+
+PATH=$(pwd)/.node/bin:$(pwd)/node_modules/.bin:$PATH commitlint --edit ${1}
