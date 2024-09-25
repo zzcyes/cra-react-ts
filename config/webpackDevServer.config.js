@@ -7,6 +7,7 @@ const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const redirectServedPath = require('react-dev-utils/redirectServedPathMiddleware');
 const paths = require('./paths');
 const getHttpsConfig = require('./getHttpsConfig');
+const proxyHotReloadMiddleware = require('proxy-hot-reload-middleware');
 
 const host = process.env.HOST || '0.0.0.0';
 const sockHost = process.env.WDS_SOCKET_HOST;
@@ -106,10 +107,22 @@ module.exports = function (proxy, allowedHost) {
       // This lets us fetch source contents from webpack for the error overlay
       devServer.app.use(evalSourceMapMiddleware(devServer));
 
+      // if (fs.existsSync(paths.proxyConfigSetup)) {
+      //   // This registers user provided middleware for proxy reasons
+      //   require(paths.proxyConfigSetup)(devServer.app);
+      // }
+      
+
+
+      if (fs.existsSync(paths.proxyConfigSetup)) {
+        devServer.app.use(proxyHotReloadMiddleware(paths.proxyConfigSetup));
+      }
+
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
         require(paths.proxySetup)(devServer.app);
       }
+
     },
     onAfterSetupMiddleware(devServer) {
       // Redirect to `PUBLIC_URL` or `homepage` from `package.json` if url not match
