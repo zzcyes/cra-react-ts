@@ -156,7 +156,7 @@ const config = {
       'store': path.resolve(__dirname, '../src/store'),  // 别名 store 指向 src/store
       'pages': path.resolve(__dirname, '../src/pages'),  // 别名 pages 指向 src/pages
       'layouts': path.resolve(__dirname, '../src/layouts'),  // 别名 pages 指向 src/pages
-      'components': path.resolve(__dirname, '../src/components'),  // 别名 pages 指向 src/pages
+     'components': path.resolve(__dirname, '../src/components'),  // 别名 pages 指向 src/pages
      'services':path.resolve(__dirname, '../src/services'),  // 别名 pages 指向 src/pages
      'router':path.resolve(__dirname, '../src/router'),  // 别名 pages 指向 src/pages
      'assets':path.resolve(__dirname, '../src/assets'),  // 别名 pages 指向 src/pages
@@ -170,7 +170,7 @@ const config = {
     },
   },
   experiments: {
-    css:true
+    css: true
   },
   module: {
     rules: [
@@ -202,13 +202,10 @@ const config = {
           },
           {
             test: /\.svg$/i,
-            type: 'asset',
-            resourceQuery: /url/,
-          },
-          {
-            test: /\.svg(?!url)$/i,
-            issuer: /\.[jt]sx?$/,
-            use: [
+            oneOf: [
+              {
+                type: 'asset/resource', // 将所有 SVG 文件处理为静态资源
+              },
               {
                 loader: '@svgr/webpack',
                 options: {
