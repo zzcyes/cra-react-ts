@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import { AxiosResponse } from 'axios';
 import { loginUserState } from '../utils';
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 export const SuccessStatusCodeInterceptor = (response: AxiosResponse<any>) => {
   // 因为接口返回体不同，所以会一起判断respcode和status
   //这里是业务状态码错误的请求逻辑，一般来说我们
@@ -29,7 +29,7 @@ export const SuccessStatusCodeInterceptor = (response: AxiosResponse<any>) => {
   }
 };
 
-const showTokenError = _.debounce(() => {
+const showTokenError = debounce(() => {
   loginUserState.clear();
   message.error('认证过期，请重新登录', 1, () => {
     window.location.href = '/toLogin';

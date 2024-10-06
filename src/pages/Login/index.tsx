@@ -4,10 +4,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Form, Input, Button, Card, Typography, Space, Divider, message } from 'antd';
 import { UserOutlined, LockOutlined, CheckCircleOutlined } from '@ant-design/icons';
-import 'antd/dist/reset.css'; // 导入 Ant Design 的样式
 import { LoginApi } from 'services';
-import { useRequest } from 'ahooks';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const { Title, Text } = Typography;
 

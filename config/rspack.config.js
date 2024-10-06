@@ -9,9 +9,8 @@ const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const modules = require('./modules');
 const createDevServerConfig = require('./rspackDevServer.config.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const InterpolateHtmlPlugin = require("@zzcyes/interpolate-html-plugin")
-
+const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -420,6 +419,35 @@ const config = {
           },
         ],
       }),
+      process.env.RSDOCTOR &&new RsdoctorRspackPlugin(),
   ].filter(Boolean),
+  optimization:{
+    minimize: isEnvProduction,
+    minimizer: [
+      new rspack.SwcJsMinimizerRspackPlugin({
+        minimizerOptions: {
+          format: {
+            comments: false,
+          },
+        },
+      }),
+      new rspack.LightningCssMinimizerRspackPlugin({
+        minimizerOptions: {
+          errorRecovery: false,
+        },
+      }),
+    ],
+    splitChunks: isEnvProduction &&  {
+      chunks:"all",
+      name: false,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: false,
+          chunks: 'all',
+        },
+      },
+    }
+  }
 };
 module.exports = config;
